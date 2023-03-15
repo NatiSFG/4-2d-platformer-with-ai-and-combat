@@ -3,28 +3,25 @@ using UnityEngine;
 
 public class Player : Character {
 
-
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask hazardLayer;
 
-    //private Rigidbody2D rb;
-    private SpriteRenderer sr;
     private Color[] colors = { Color.red, Color.white };
     private Coroutine damageFlash;
 
-    void Start() {
-        //base.rb = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
+    protected override void Start() {
+        base.Start();
         maxHealth = 10;
     }
 
-    public override void Update() {
+    protected override void Update() {
         base.Update();
         //if the current number in the currentDamageInterval is <= 0 or in other words if
         //2 seconds of delay has passed, take damage
         if (CanTakeDamage())
-            if (Physics2D.OverlapCircle(groundCheck.position, 0.5f, hazardLayer))
+            if (Physics2D.OverlapCircle(groundCheck.position, 0.5f, hazardLayer)) {
                 TakeDamage(1);
+            }
 
         //for testing purposes
         if (Input.GetKeyDown(KeyCode.H))

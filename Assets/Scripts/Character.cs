@@ -9,19 +9,19 @@ public class Character : MonoBehaviour {
     [SerializeField] protected float damageInterval = 2f; //in seconds
     protected float currentDamageInterval;
 
-    //private SpriteRenderer sr;
-    public Rigidbody2D rb;
+    protected SpriteRenderer sr;
+    private Rigidbody2D rb;
 
-    void Start() {
-        //sr = GetComponent<SpriteRenderer>();
+    protected virtual void Start() {
+        sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
 
-    public virtual void Update() {
+    protected virtual void Update() {
         //subtract 1 real life second
-        if (currentDamageInterval > 0)
+        if (currentDamageInterval >= 0)
             currentDamageInterval -= Time.deltaTime;
     }
 

@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour {
     /// </summary>
     private void GroundCheck() {
         isGrounded = false;
-        if (Physics2D.OverlapCircle(groundCheck.position, 0.5f, groundLayer) == true) {
+        if (Physics2D.OverlapCircle(groundCheck.position, 0.5f, groundLayer)) {
             isGrounded = true;
         }
         animator.SetBool("Jump", !isGrounded);

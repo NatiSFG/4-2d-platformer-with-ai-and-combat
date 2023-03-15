@@ -18,13 +18,17 @@ public class PlayerRespawn : MonoBehaviour {
     }
 
     /// <summary>
-    /// Sets the Player's position to the Respawn Point.
+    /// If the Player touches a trigger collider that is tagged "Respawn
+    /// Trigger", this sets the Player's position to the Respawn Point.
     /// </summary>
     /// <param name="other">The Player's collider.</param>
     void OnTriggerEnter2D(Collider2D other) {
-        gameObject.transform.position = respawnPoint.position;
-        Flip();
-        RestoreHealth();
+        if(other.gameObject.CompareTag("Respawn Trigger")) {
+            Debug.Log("this tag finding is true");
+            gameObject.transform.position = respawnPoint.position;
+            FlipToFaceRight();
+            RestoreHealth();
+        }
     }
 
     /// <summary>
@@ -34,12 +38,12 @@ public class PlayerRespawn : MonoBehaviour {
     void PlayerHealthZero() {
         if (playerHealth.currentHealth == 0) {
             transform.position = respawnPoint.position;
-            Flip();
+            FlipToFaceRight();
             RestoreHealth();
         }
     }
 
-    void Flip() {
+    void FlipToFaceRight() {
         if(playerController.isFacingRight == false) {
             GetComponent<SpriteRenderer>().flipX = false;
             playerController.isFacingRight = true;
