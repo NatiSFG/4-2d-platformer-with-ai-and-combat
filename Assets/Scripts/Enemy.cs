@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Enemy : Character {
 
-    //[SerializeField] private Transform recieveDamageCheckP1;
-    //[SerializeField] private Transform recieveDamageCheckP2;
     [SerializeField] private LayerMask player;
 
     protected override void Start() {
@@ -15,10 +13,6 @@ public class Enemy : Character {
 
     protected override void Update() {
         base.Update();
-
-        //if (CanTakeDamage())
-            
-
 
         //if (CanTakeDamage()) {
         //    if (Physics2D.OverlapArea(recieveDamageCheckP1.position, recieveDamageCheckP2.position, player)) {

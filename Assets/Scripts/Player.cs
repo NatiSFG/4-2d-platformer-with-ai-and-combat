@@ -30,7 +30,6 @@ public class Player : Character {
 
     public override void TakeDamage(int damage) {
         base.TakeDamage(damage);
-
         //guarantee at most, one coroutine runs at a time
         if (damageFlash != null)
             StopCoroutine(damageFlash);

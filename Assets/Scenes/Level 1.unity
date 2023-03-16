@@ -946,8 +946,6 @@ MonoBehaviour:
   currentHealth: 0
   healthBar: {fileID: 171643012}
   damageInterval: 2
-  recieveDamageCheckP1: {fileID: 1649166999}
-  recieveDamageCheckP2: {fileID: 1543411673}
   player:
     serializedVersion: 2
     m_Bits: 256
