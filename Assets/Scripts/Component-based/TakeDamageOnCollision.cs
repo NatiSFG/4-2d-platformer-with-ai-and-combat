@@ -17,7 +17,6 @@ public class TakeDamageOnCollision : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision) {
         if (gameObject.CompareTag("Hazard") && collision.gameObject.CompareTag("Player") && takeDamage.CanTakeDamage()) {
             takeDamage.EnemyTakeDamage(damageAmount);
-            Debug.Log("on collision");
             healthBar.SetHealth(health.currentHealth);
         }
             

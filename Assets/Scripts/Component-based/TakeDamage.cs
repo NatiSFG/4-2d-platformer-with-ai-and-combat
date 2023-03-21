@@ -19,7 +19,6 @@ public class TakeDamage : MonoBehaviour {
 
         if(gameObject.CompareTag("Hazard")) {
             health.currentHealth -= damageAmount;
-            Debug.Log("health subtracting");
             currentDamageInterval = damageInterval;
             if (health.currentHealth <= 0)
                 Destroy(gameObject);

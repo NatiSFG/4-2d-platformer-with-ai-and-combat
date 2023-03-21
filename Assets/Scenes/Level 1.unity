@@ -309,9 +309,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 10
+  m_MaxValue: 3
   m_WholeNumbers: 1
-  m_Value: 10
+  m_Value: 3
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -327,6 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d109431605cf010409c21b617c48cd7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 718806223}
   slider: {fileID: 171643013}
   gradient:
     serializedVersion: 2
@@ -944,6 +945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
+  healthBarGO: {fileID: 171643010}
 --- !u!114 &718806230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -957,7 +959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 3
-  currentHealth: 0
+  currentHealth: 2
 --- !u!1 &814097162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1057,11 +1059,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814097162}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d109431605cf010409c21b617c48cd7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 0}
   slider: {fileID: 814097165}
   gradient:
     serializedVersion: 2
